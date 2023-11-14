@@ -3,30 +3,26 @@ name: Push RaysGitOpsDemo.Chassis
 on:
   push:
     branches:
-      - main
+        - main
     paths:
-      - src/RaysGitOpsDemo.Chassis/**
+        - src/RaysGitOpsDemo.Chassis/**
 jobs:
-  build:
-    runs-on: ubuntu-latest
+    build:
+        runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout Source Code
-        uses: actions/checkout@v3
+        steps:
+            - name: Checkout Source Code
+              uses: actions/checkout@v3
 
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v3
-        with:
-          dotnet-version: 6.0.x
+            - name: Setup .NET
+              uses: actions/setup-dotnet@v3
+              with:
+                dotnet-version: 6.0.x
 
-      - name: Restore Dependencies
-        run: dotnet restore
+            - name: Pack
+              run: dotnet pack src/RaysGitOpsDemo.Chassis.Common -c Release -o packages
 
-      - name: Build
-        working-directory: src/RaysGitOpsDemo.Chassis
-        run: dotnet build --no-restore
-
-      - name: Push
-        run: dotnet nuget push packages/RaysGitOpsDemo.Chassis.nupkg \
-          -k "${{ secrets.GHP_USER }}:${{ secrets.GHP_PASSWORD }}" \
-          --skip-duplicate
+            - name: Push
+              run: dotnet nuget push packages/RaysGitOpsDemo.Chassis.nupkg \
+                -k "${{ secrets.GHP_USER }}:${{ secrets.GHP_PASSWORD }}" \
+                --skip-duplicate
