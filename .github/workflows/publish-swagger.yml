@@ -24,8 +24,8 @@ jobs:
         run: |
           dotnet nuget add source \
           "https://nuget.pkg.github.com/RaysGitOpsDemo/index.json" \
-          --username ${{ secrets.GHP_USER }} \
-          --password ${{ secrets.GHP_PASSWORD }} \
+          --username "${{ secrets.GHP_USER }}" \
+          --password "${{ secrets.GHP_PASSWORD }}" \
           --store-password-in-clear-text \
           --name ghp
 
@@ -34,7 +34,7 @@ jobs:
 
       - name: Push
         run: |
-          dotnet nuget push packages/RaysGitOpsDemo.Chassis.Swagger.*.nupkg \
+          dotnet nuget push packages/*.nupkg \
           --source ghp \
           --api-key "${{ secrets.GHP_USER }}:${{ secrets.GHP_PASSWORD }}" \
           --skip-duplicate
