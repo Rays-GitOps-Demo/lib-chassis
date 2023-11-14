@@ -34,7 +34,7 @@ jobs:
 
       - name: Push
         run: |
-          dotnet nuget push packages/RaysGitOpsDemo.Chassis.Swagger.nupkg \
+          dotnet nuget push packages/RaysGitOpsDemo.Chassis.Swagger.*.nupkg \
           --source ghp \
           --api-key "${{ secrets.GHP_USER }}:${{ secrets.GHP_PASSWORD }}" \
           --skip-duplicate

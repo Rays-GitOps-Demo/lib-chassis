@@ -34,7 +34,7 @@ jobs:
 
       - name: Push
         run: |
-          dotnet nuget push packages/RaysGitOpsDemo.Chassis.Logging.nupkg \
+          dotnet nuget push packages/RaysGitOpsDemo.Chassis.Logging.*.nupkg \
           --source ghp \
           --api-key "${{ secrets.GHP_USER }}:${{ secrets.GHP_PASSWORD }}" \
           --skip-duplicate
