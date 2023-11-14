@@ -33,7 +33,8 @@ jobs:
         run: dotnet pack src/RaysGitOpsDemo.Chassis.Common -c Release -o packages
 
       - name: Push
-        run: dotnet nuget push packages/RaysGitOpsDemo.Chassis.nupkg \
-          -s ghp \
-          -k "${{ secrets.GHP_USER }}:${{ secrets.GHP_PASSWORD }}" \
+        run: |
+          dotnet nuget push packages/RaysGitOpsDemo.Chassis.nupkg \
+          --source ghp \
+          --api-key "${{ secrets.GHP_USER }}:${{ secrets.GHP_PASSWORD }}" \
           --skip-duplicate

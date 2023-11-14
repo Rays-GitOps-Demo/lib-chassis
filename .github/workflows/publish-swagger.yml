@@ -29,15 +29,12 @@ jobs:
           --store-password-in-clear-text \
           --name ghp
 
-      - name: Restore Dependencies
-        run: dotnet restore
-
-      - name: Build
-        working-directory: src/RaysGitOpsDemo.Chassis.Swagger
-        run: dotnet build --no-restore
+      - name: Pack
+        run: dotnet pack src/RaysGitOpsDemo.Chassis.Common -c Release -o packages
 
       - name: Push
-        run: dotnet nuget push packages/RaysGitOpsDemo.Chassis.Swagger.nupkg \
-          -s ghp \
-          -k "${{ secrets.GHP_USER }}:${{ secrets.GHP_PASSWORD }}" \
+        run: |
+          dotnet nuget push packages/RaysGitOpsDemo.Chassis.Swagger.nupkg \
+          --source ghp \
+          --api-key "${{ secrets.GHP_USER }}:${{ secrets.GHP_PASSWORD }}" \
           --skip-duplicate
