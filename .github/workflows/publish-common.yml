@@ -22,10 +22,11 @@ jobs:
 
             - name: Setup NuGet Source
               run: dotnet nuget add source \
-                --username "${{ secrets.GHP_USER }}" \
-                --password "${{ secrets.GHP_PASSWORD }}" \
+                --username ${{ secrets.GHP_USER }} \
+                --password ${{ secrets.GHP_PASSWORD }} \
                 --store-password-in-clear-text \
-                --name ghp
+                --name ghp \
+                https://nuget.pkg.github.com/RaysGitOpsDemo/index.json
 
             - name: Pack
               run: dotnet pack src/RaysGitOpsDemo.Chassis.Common -c Release -o packages

@@ -21,11 +21,12 @@ jobs:
                 dotnet-version: 6.0.x
 
             - name: Setup NuGet Source
-              run: dotnet nuget add source \
-                --username "${{ secrets.GHP_USER }}" \
-                --password "${{ secrets.GHP_PASSWORD }}" \
+              run: dotnet nuget add source  \
+                --username ${{ secrets.GHP_USER }} \
+                --password ${{ secrets.GHP_PASSWORD }} \
                 --store-password-in-clear-text \
-                --name ghp
+                --name ghp \
+                https://nuget.pkg.github.com/RaysGitOpsDemo/index.json
 
             - name: Restore Dependencies
               run: dotnet restore
