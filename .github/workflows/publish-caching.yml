@@ -36,4 +36,5 @@ jobs:
         run: |
           dotnet nuget push packages/*.nupkg \
           --source ghp \
+          --api-key "${{ secrets.GHP_PASSWORD }}" \
           --skip-duplicate
