@@ -5,6 +5,7 @@ on:
     branches:
         - main
     paths:
+        - .github/workflows/publish-chassis.yml
         - src/RaysGitOpsDemo.Chassis/**
 jobs:
     build:

@@ -5,6 +5,7 @@ on:
     branches:
         - main
     paths:
+        - .github/workflows/publish-logging.yml
         - src/RaysGitOpsDemo.Chassis.Logging/**
 jobs:
     build:

@@ -5,6 +5,7 @@ on:
     branches:
         - main
     paths:
+        - .github/workflows/publish-common.yml
         - src/RaysGitOpsDemo.Chassis.Common/**
 jobs:
     build:

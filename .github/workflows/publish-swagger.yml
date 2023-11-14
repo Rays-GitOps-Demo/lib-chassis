@@ -5,6 +5,7 @@ on:
     branches:
         - main
     paths:
+        - .github/workflows/publish-swagger.yml
         - src/RaysGitOpsDemo.Chassis.Swagger/**
 jobs:
     build:
