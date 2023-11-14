@@ -3,36 +3,37 @@ name: Push RaysGitOpsDemo.Chassis.Common
 on:
   push:
     branches:
-        - main
+      - main
     paths:
-        - .github/workflows/publish-common.yml
-        - src/RaysGitOpsDemo.Chassis.Common/**
+      - .github/workflows/publish-common.yml
+      - src/RaysGitOpsDemo.Chassis.Common/**
 jobs:
-    publish:
-        runs-on: ubuntu-latest
+  publish:
+    runs-on: ubuntu-latest
 
-        steps:
-            - name: Checkout Source Code
-              uses: actions/checkout@v3
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v3
 
-            - name: Setup .NET
-              uses: actions/setup-dotnet@v3
-              with:
-                dotnet-version: 6.0.x
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 6.0.x
 
-            - name: Setup NuGet Source
-              run: dotnet nuget add source \
-                "https://nuget.pkg.github.com/RaysGitOpsDemo/index.json" \
-                --username "${{ secrets.GHP_USER }}" \
-                --password "${{ secrets.GHP_PASSWORD }}" \
-                --store-password-in-clear-text \
-                --name ghp
+      - name: Setup NuGet Source
+        run: |
+          dotnet nuget add source \
+          "https://nuget.pkg.github.com/RaysGitOpsDemo/index.json" \
+          --username "${{ secrets.GHP_USER }}" \
+          --password "${{ secrets.GHP_PASSWORD }}" \
+          --store-password-in-clear-text \
+          --name ghp
 
-            - name: Pack
-              run: dotnet pack src/RaysGitOpsDemo.Chassis.Common -c Release -o packages
+      - name: Pack
+        run: dotnet pack src/RaysGitOpsDemo.Chassis.Common -c Release -o packages
 
-            - name: Push
-              run: dotnet nuget push packages/RaysGitOpsDemo.Chassis.Common.nupkg \
-                -s ghp \
-                -k "${{ secrets.GHP_USER }}:${{ secrets.GHP_PASSWORD }}" \
-                --skip-duplicate
+      - name: Push
+        run: dotnet nuget push packages/RaysGitOpsDemo.Chassis.Common.nupkg \
+          -s ghp \
+          -k "${{ secrets.GHP_USER }}:${{ secrets.GHP_PASSWORD }}" \
+          --skip-duplicate
