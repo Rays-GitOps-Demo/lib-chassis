@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F70F7DE7-7895-4184-B9FA-6B856D999939}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaysGitOpsDemo.Chassis.Logging", "src\RaysGitOpsDemo.Chassis.Logging\RaysGitOpsDemo.Chassis.Logging.csproj", "{FFD3214A-18EE-4E9C-BF4B-45979E8F48CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaysGitOpsDemo.Chassis.Caching", "src\RaysGitOpsDemo.Chassis.Caching\RaysGitOpsDemo.Chassis.Caching.csproj", "{AC319933-0FFE-4164-AFA7-CC0DEC7070D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaysGitOpsDemo.Chassis.Swagger", "src\RaysGitOpsDemo.Chassis.Swagger\RaysGitOpsDemo.Chassis.Swagger.csproj", "{D56DE479-D2A2-4DFE-8E2C-8419C9781FA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaysGitOpsDemo.Chassis.Common", "src\RaysGitOpsDemo.Chassis.Common\RaysGitOpsDemo.Chassis.Common.csproj", "{959492A2-4817-4250-8883-445B45ACD5BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaysGitOpsDemo.Chassis", "src\RaysGitOpsDemo.Chassis\RaysGitOpsDemo.Chassis.csproj", "{82D64738-8216-4A91-B17B-5927AD0848D8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FFD3214A-18EE-4E9C-BF4B-45979E8F48CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFD3214A-18EE-4E9C-BF4B-45979E8F48CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFD3214A-18EE-4E9C-BF4B-45979E8F48CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFD3214A-18EE-4E9C-BF4B-45979E8F48CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC319933-0FFE-4164-AFA7-CC0DEC7070D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC319933-0FFE-4164-AFA7-CC0DEC7070D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC319933-0FFE-4164-AFA7-CC0DEC7070D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC319933-0FFE-4164-AFA7-CC0DEC7070D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D56DE479-D2A2-4DFE-8E2C-8419C9781FA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D56DE479-D2A2-4DFE-8E2C-8419C9781FA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D56DE479-D2A2-4DFE-8E2C-8419C9781FA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D56DE479-D2A2-4DFE-8E2C-8419C9781FA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{959492A2-4817-4250-8883-445B45ACD5BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{959492A2-4817-4250-8883-445B45ACD5BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{959492A2-4817-4250-8883-445B45ACD5BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{959492A2-4817-4250-8883-445B45ACD5BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82D64738-8216-4A91-B17B-5927AD0848D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82D64738-8216-4A91-B17B-5927AD0848D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82D64738-8216-4A91-B17B-5927AD0848D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82D64738-8216-4A91-B17B-5927AD0848D8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FFD3214A-18EE-4E9C-BF4B-45979E8F48CA} = {F70F7DE7-7895-4184-B9FA-6B856D999939}
+		{AC319933-0FFE-4164-AFA7-CC0DEC7070D9} = {F70F7DE7-7895-4184-B9FA-6B856D999939}
+		{D56DE479-D2A2-4DFE-8E2C-8419C9781FA0} = {F70F7DE7-7895-4184-B9FA-6B856D999939}
+		{959492A2-4817-4250-8883-445B45ACD5BA} = {F70F7DE7-7895-4184-B9FA-6B856D999939}
+		{82D64738-8216-4A91-B17B-5927AD0848D8} = {F70F7DE7-7895-4184-B9FA-6B856D999939}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,32 @@
+name: .NET
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - src/RaysGitOpsDemo.Chassis.Swagger/**
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkput Source Code
+        uses: actions/checkout@v3
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 6.0.x
+
+      - name: Restore Dependencies
+        run: dotnet restore
+
+      - name: Build
+        working-directory: src/RaysGitOpsDemo.Chassis.Swagger
+        run: dotnet build --no-restore
+
+      - name: Push
+        run: dotnet nuget push packages/RaysGitOpsDemo.Chassis.Swagger.nupkg \
+          -k "${{ secrets.GHP_USER }}:${{ secrets.GHP_PASSWORD }}" \
+          --skip-duplicate
