@@ -8,7 +8,7 @@ on:
         - .github/workflows/publish-common.yml
         - src/RaysGitOpsDemo.Chassis.Common/**
 jobs:
-    build:
+    publish:
         runs-on: ubuntu-latest
 
         steps:
@@ -20,10 +20,18 @@ jobs:
               with:
                 dotnet-version: 6.0.x
 
+            - name: Setup NuGet Source
+              run: dotnet nuget add source \
+                --username ${{ secrets.GHP_USER }} \
+                --password ${{ secrets.GHP_PASSWORD }} \
+                --store-password-in-clear-text \
+                --name ghp
+
             - name: Pack
               run: dotnet pack src/RaysGitOpsDemo.Chassis.Common -c Release -o packages
 
             - name: Push
               run: dotnet nuget push packages/RaysGitOpsDemo.Chassis.Common.nupkg \
+                -s ghp \
                 -k "${{ secrets.GHP_USER }}:${{ secrets.GHP_PASSWORD }}" \
                 --skip-duplicate
