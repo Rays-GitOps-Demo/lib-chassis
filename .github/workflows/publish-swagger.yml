@@ -23,7 +23,7 @@ jobs:
       - name: Setup NuGet Source
         run: |
           dotnet nuget add source \
-          "https://nuget.pkg.github.com/RaysGitOpsDemo/index.json" \
+          "https://nuget.pkg.github.com/Rays-GitOps-Demo/index.json" \
           --username "${{ secrets.GHP_USER }}" \
           --password "${{ secrets.GHP_PASSWORD }}" \
           --store-password-in-clear-text \
