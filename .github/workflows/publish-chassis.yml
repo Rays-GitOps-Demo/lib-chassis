@@ -30,7 +30,7 @@ jobs:
           --name ghp
 
       - name: Pack
-        run: dotnet pack src/RaysGitOpsDemo.Chassis.Common -c Release -o packages
+        run: dotnet pack src/RaysGitOpsDemo.Chassis -c Release -o packages
 
       - name: Push
         run: |
